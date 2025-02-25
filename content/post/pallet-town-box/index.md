@@ -10,4 +10,5 @@ categories:
 tags:
     - Pallet Town
     - Remix
+draft: true
 ---
