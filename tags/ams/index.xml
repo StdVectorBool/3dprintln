@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ams on 3D.println()</title><link>https://stdvectorbool.github.io/3dprintln/tags/ams/</link><description>Recent content in Ams on 3D.println()</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://stdvectorbool.github.io/3dprintln/tags/ams/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding AMS Waste</title><link>https://stdvectorbool.github.io/3dprintln/p/ams-waste/</link><pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate><guid>https://stdvectorbool.github.io/3dprintln/p/ams-waste/</guid><description>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/cover.jpg" alt="Featured image of post Understanding AMS Waste" />&lt;h1 id="setup">Setup
+&lt;/h1>&lt;p>Download the &lt;a class="link" href="https://github.com/bambulab/BambuStudio/releases" target="_blank" rel="noopener"
+>latest Bambu Studio&lt;/a> to follow along with the experiments using these settings:&lt;/p>
+&lt;p>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/defaults.png"
+width="464"
+height="611"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/defaults_hu_6c9cf21ee17735cf.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/defaults_hu_b4d20daf8d3c56c5.png 1024w"
+loading="lazy"
+alt="Default settings"
+class="gallery-image"
+data-flex-grow="75"
+data-flex-basis="182px"
+>&lt;/p>
+&lt;ol>
+&lt;li>I own the A1 w/ AMS Lite. P1P values should be similar, but you can easily switch the Printer and re-test.&lt;/li>
+&lt;li>The Bambu PLA Basic profile has a high max flow setting for fast printing.&lt;/li>
+&lt;li>Advanced settings allow more variables for testing.&lt;/li>
+&lt;li>Using the Standard quality baseline, but we&amp;rsquo;ll discuss speed tradeoffs.&lt;/li>
+&lt;/ol>
+&lt;h1 id="absolute-fastest-print-time">Absolute Fastest Print Time
+&lt;/h1>&lt;p>Add a simple single color cube (via right click) then slice it to see the maximum speed possible print speed (18m26s).&lt;/p>
+&lt;p>Briefly switch the Printer to &lt;code>Bambu Lab P1P 0.4 nozzle&lt;/code> if you want to know if a CoreXY machine with the AMS is that much faster. There&amp;rsquo;s not much difference (19m23s) since this model isn&amp;rsquo;t very large and there aren&amp;rsquo;t many tiny features where a CoreXY&amp;rsquo;s accelerations might reach faster speeds.&lt;/p>
+&lt;p>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/add-cube.png"
+width="778"
+height="755"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/add-cube_hu_ee6d39501e974660.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/add-cube_hu_15cf8a6f0c005b2f.png 1024w"
+loading="lazy"
+alt="Add Cube"
+class="gallery-image"
+data-flex-grow="103"
+data-flex-basis="247px"
+> &lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/max-speed-cube-a1.png"
+width="716"
+height="519"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/max-speed-cube-a1_hu_e0541f9f050b008e.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/max-speed-cube-a1_hu_e71d4cef6be26431.png 1024w"
+loading="lazy"
+alt="Max Speed A1"
+class="gallery-image"
+data-flex-grow="137"
+data-flex-basis="331px"
+> &lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/max-speed-cube-p1.png"
+width="1594"
+height="542"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/max-speed-cube-p1_hu_719a2c485c17253f.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/max-speed-cube-p1_hu_4c3b54e37f960d97.png 1024w"
+loading="lazy"
+alt="Max Speed P1"
+class="gallery-image"
+data-flex-grow="294"
+data-flex-basis="705px"
+>&lt;/p>
+&lt;h1 id="minimal-color-change-time">Minimal Color Change Time
+&lt;/h1>&lt;p>Switch the Printer back to &lt;code>Bambu Lab A1 0.4 nozzle&lt;/code> then apply some color:&lt;/p>
+&lt;ol>
+&lt;li>select the Color Painting tool&lt;/li>
+&lt;li>with a different filament color&lt;/li>
+&lt;li>using the Height Range brush&lt;/li>
+&lt;li>with a large Height Range of 8mm&lt;/li>
+&lt;li>to paint the top half of the cube blue&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint.png"
+width="718"
+height="500"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint_hu_50a3a7e5cb2ac4ed.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint_hu_d0bd072bccde815c.png 1024w"
+loading="lazy"
+alt="Horizontal Paint"
+class="gallery-image"
+data-flex-grow="143"
+data-flex-basis="344px"
+>&lt;/p>
+&lt;p>then slice to see the time increase (23m32s)&lt;/p>
+&lt;p>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-initial-filament.png"
+width="686"
+height="465"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-initial-filament_hu_86dc75a9e8223081.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-initial-filament_hu_b16f69bbb4f651df.png 1024w"
+loading="lazy"
+alt="Initial Filament"
+class="gallery-image"
+data-flex-grow="147"
+data-flex-basis="354px"
+>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-initial-line.png"
+width="720"
+height="524"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-initial-line_hu_a3b6e6dff81ad5c0.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-initial-line_hu_2f1dc1212f5d7333.png 1024w"
+loading="lazy"
+alt="Initial Line Type"
+class="gallery-image"
+data-flex-grow="137"
+data-flex-basis="329px"
+>&lt;/p>
+&lt;p>The &lt;a class="link" href="https://wiki.bambulab.com/en/software/bambu-studio/parameter/prime-tower" target="_blank" rel="noopener"
+>Prime Tower&lt;/a> (1) adds 3g of filament and 6m to the print time, so let&amp;rsquo;s disable it for now to get a feel for the pure AMS swap (cut, unload, load, flush). The new print time is 19m18s so estimate the swap time at 58s. Depending on the design, disabling the Prime Tower might not cause major print defects.&lt;/p>
+&lt;p>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-no-prime.png"
+width="1130"
+height="530"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-no-prime_hu_816c1c74f656e792.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-no-prime_hu_55c74d96caa648c1.png 1024w"
+loading="lazy"
+alt="No Prime"
+class="gallery-image"
+data-flex-grow="213"
+data-flex-basis="511px"
+>&lt;/p>
+&lt;p>Surprisingly adding 2 more filament swaps adds 3m12 (instead of 2m) so average swap time has increased to 1m23s likely due to different before/after color combinations requiring more &lt;a class="link" href="https://wiki.bambulab.com/en/software/bambu-studio/reduce-wasting-during-filament-change" target="_blank" rel="noopener"
+>flush volume&lt;/a> (2-4)&lt;/p>
+&lt;p>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-no-prime-more-colors.png"
+width="705"
+height="547"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-no-prime-more-colors_hu_6228a8ecc61df72c.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/horizontal-paint-no-prime-more-colors_hu_45332b0b9a0fb85b.png 1024w"
+loading="lazy"
+alt="More Colors"
+class="gallery-image"
+data-flex-grow="128"
+data-flex-basis="309px"
+>&lt;/p>
+&lt;h1 id="absolute-slowest-print-time">Absolute Slowest Print Time
+&lt;/h1>&lt;p>Make the worst possible decision and rotate the model to cause color swaps on every layer. This adds 604m to our intial 18m print time and averages out to 1m33s per swap (the P1P profile is in the same ballpark).&lt;/p>
+&lt;p>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/vertical-paint-rotate.png"
+width="585"
+height="542"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/vertical-paint-rotate_hu_79265e449aa84a31.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/vertical-paint-rotate_hu_61a72af8f3e43798.png 1024w"
+loading="lazy"
+alt="Vertical Paint"
+class="gallery-image"
+data-flex-grow="107"
+data-flex-basis="259px"
+> &lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/vertical-paint-initial.png"
+width="566"
+height="552"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/vertical-paint-initial_hu_35e194d1e7af0051.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/vertical-paint-initial_hu_7a72795539032fcd.png 1024w"
+loading="lazy"
+alt="Vertical Initial"
+class="gallery-image"
+data-flex-grow="102"
+data-flex-basis="246px"
+>&lt;/p>
+&lt;h1 id="color-swaps-are-evil-avoid">Color swaps are evil, avoid!
+&lt;/h1>&lt;p>The two previous experiments show the easiest speed optimization is re-orienting models to minimize color swaps.&lt;/p>
+&lt;p>What if you want to print multiple objects that are different colors on one plate?
+&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-layer.png"
+width="818"
+height="551"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-layer_hu_8303659ad0b7eaf7.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-layer_hu_f9ce049b31c5d30.png 1024w"
+loading="lazy"
+alt="4 Cubes By Layer"
+class="gallery-image"
+data-flex-grow="148"
+data-flex-basis="356px"
+>&lt;/p>
+&lt;p>Use &lt;a class="link" href="https://wiki.bambulab.com/en/software/bambu-studio/sequent-print" target="_blank" rel="noopener"
+>Print by Object&lt;/a> so each single-color cube is fully printed before starting the next cube. The highlight around each object is a buffer zone so when toolhead goes back down to a lower layer it doesn&amp;rsquo;t collide with existing objects (&lt;a class="link" href="https://wiki.bambulab.com/en/software/bambu-studio/sequent-print#limitations" target="_blank" rel="noopener"
+>more details&lt;/a>). On a P1P it&amp;rsquo;s possible to use the Arrange tool to place all four cubes on one plate but on the A1 you can only fit 3. This option also disables the Prime tower.&lt;/p>
+&lt;p>&lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-object.png"
+width="1145"
+height="706"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-object_hu_a54947445747e1fd.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-object_hu_78a55e01e0173290.png 1024w"
+loading="lazy"
+alt="4 Cubes By Object"
+class="gallery-image"
+data-flex-grow="162"
+data-flex-basis="389px"
+> &lt;img src="https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-object-arranged.png"
+width="1143"
+height="619"
+srcset="https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-object-arranged_hu_bba0acb0d6eafc6b.png 480w, https://stdvectorbool.github.io/3dprintln/p/ams-waste/four-cubes-by-object-arranged_hu_c46ca03771542b.png 1024w"
+loading="lazy"
+alt="Arranged"
+class="gallery-image"
+data-flex-grow="184"
+data-flex-basis="443px"
+>&lt;/p></description></item></channel></rss>
